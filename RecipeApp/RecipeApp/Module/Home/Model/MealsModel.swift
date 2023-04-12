@@ -37,6 +37,4 @@ struct MealsModel: Codable {
     var strMeasure7: String?
     var strMeasure8: String?
     var strMeasure9: String?
-
-
 }

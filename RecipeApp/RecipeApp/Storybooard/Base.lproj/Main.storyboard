@@ -95,7 +95,7 @@
         <!--Home View Controller-->
         <scene sceneID="p6M-KD-haW">
             <objects>
-                <viewController id="oIV-m1-PUZ" customClass="HomeViewController" customModule="RecipeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="oIV-m1-PUZ" customClass="HomeViewController" customModule="RecipeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3aq-BE-rWs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

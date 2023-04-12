@@ -9,6 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    static let identifier = "HomeViewController"
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var allMealsCollectionView: UICollectionView!
     @IBOutlet weak var areaCollectionView: UICollectionView!
@@ -51,11 +52,11 @@ class HomeViewController: UIViewController {
     func addData() {
         // TODO: HAPUS KALO UDAH ADA API
         // categories
-        categoriesData.append(MealsModel(strMealThumb:"", strMeal: "Shushi"))
+        categoriesData.append(MealsModel(strMealThumb:"shushi", strMeal: "Shushi"))
         categoriesData.append(MealsModel(strMealThumb:"chicken",strMeal:"FriedChicken"))
         categoriesData.append(MealsModel(strMealThumb:"burger",strMeal:"Hamburger"))
-        categoriesData.append(MealsModel(strMealThumb:"",strMeal: "Pizza"))
-        categoriesData.append(MealsModel(strMealThumb:"",strMeal:"Salad"))
+        categoriesData.append(MealsModel(strMealThumb:"pizza",strMeal: "Pizza"))
+        categoriesData.append(MealsModel(strMealThumb:"fruit salad",strMeal:"Salad"))
         
         // meals
         allMealsData.append(MealsModel(strMealThumb: "chicken", idMeal: "1", strMeal: "Fried Chicken", strCategory: "Chicken", strArea: "Batam"))
@@ -68,7 +69,7 @@ class HomeViewController: UIViewController {
         areaData.append(MealsModel(strMealThumb:""))
         areaData.append(MealsModel(strMealThumb:""))
         
-        // inggredients
+        // ingredients
         ingredientsData.append(MealsModel(strMealThumb:"", strMeal:""))
         ingredientsData.append(MealsModel(strMealThumb:"", strMeal:""))
         ingredientsData.append(MealsModel(strMealThumb:"", strMeal:""))
@@ -77,19 +78,15 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func seeAllCategoriesTap(_ sender: Any) {
-        
     }
     
     @IBAction func seeAllMealsTap(_ sender: Any) {
-        
     }
     
     @IBAction func seeAreaTap(_ sender: Any) {
-        
     }
     
     @IBAction func seeIngredientsTap(_ sender: Any) {
-        
     }
     
 }
@@ -127,7 +124,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
             cell.backgroundColor = .gray
             cell.categoriesLabel.text = categoriesData[indexPath.row].strMeal
-
+            cell.categoriesImage.image = (UIImage(named: "chicken"))
             return cell
 
         case allMealsCollectionView:

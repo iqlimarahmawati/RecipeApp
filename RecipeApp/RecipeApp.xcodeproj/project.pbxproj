@@ -117,9 +117,17 @@
 			path = SigUp;
 			sourceTree = "<group>";
 		};
+		36DFB65A29E67A61005FA04E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		919500DF29E449070080F3F8 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				36DFB65A29E67A61005FA04E /* Profile */,
 				919500E129E4493F0080F3F8 /* Home */,
 				36DFB65729E644EC005FA04E /* Cell-Detail */,
 				36DFB65929E64528005FA04E /* SigUp */,
@@ -139,8 +147,8 @@
 		919500E129E4493F0080F3F8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				919500E329E449AB0080F3F8 /* View */,
 				91C7060B29E436FE0012B19E /* Model */,
+				919500E329E449AB0080F3F8 /* View */,
 				91F3093D29E5AD2F00214C27 /* Cell-Home */,
 			);
 			path = Home;
