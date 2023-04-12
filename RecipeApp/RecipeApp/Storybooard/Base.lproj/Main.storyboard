@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y5y-Ra-Sdv">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -90,18 +90,18 @@
                     <nil key="highlightedColor"/>
                 </label>
             </objects>
-            <point key="canvasLocation" x="210" y="-544"/>
+            <point key="canvasLocation" x="239" y="-280"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="p6M-KD-haW">
             <objects>
-                <viewController id="oIV-m1-PUZ" sceneMemberID="viewController">
+                <viewController id="oIV-m1-PUZ" customClass="HomeViewController" customModule="RecipeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3aq-BE-rWs">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJi-0h-rIb">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BFm-AS-bcY">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
@@ -145,6 +145,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="See All"/>
+                                                        <connections>
+                                                            <action selector="seeAllCategoriesTap:" destination="oIV-m1-PUZ" eventType="touchUpInside" id="ecw-ad-6q4"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
@@ -163,8 +166,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVd-jt-9MG">
                                                 <rect key="frame" x="0.0" y="200" width="393" height="400"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfj-oe-xGM">
-                                                        <rect key="frame" x="16" y="16" width="83" height="34"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Meals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfj-oe-xGM">
+                                                        <rect key="frame" x="16" y="16" width="68.333333333333329" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="ws0-EY-UZo"/>
                                                         </constraints>
@@ -199,6 +202,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="See All"/>
+                                                        <connections>
+                                                            <action selector="seeAllMealsTap:" destination="oIV-m1-PUZ" eventType="touchUpInside" id="pcd-zu-yNx"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -217,8 +223,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcn-LO-Th1">
                                                 <rect key="frame" x="0.0" y="600" width="393" height="200"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spU-cg-zbC">
-                                                        <rect key="frame" x="16" y="16" width="83" height="34"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Area" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spU-cg-zbC">
+                                                        <rect key="frame" x="16.000000000000004" y="16" width="35.333333333333343" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="etp-64-i52"/>
                                                         </constraints>
@@ -253,6 +259,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="See All"/>
+                                                        <connections>
+                                                            <action selector="seeAreaTap:" destination="oIV-m1-PUZ" eventType="touchUpInside" id="CNm-ZX-Exa"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -271,8 +280,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7MQ-Fs-OpA">
                                                 <rect key="frame" x="0.0" y="800" width="393" height="200"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1P-3j-Mif">
-                                                        <rect key="frame" x="16" y="16" width="83" height="34"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1P-3j-Mif">
+                                                        <rect key="frame" x="16" y="16" width="85.333333333333329" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="N3O-Ih-C20"/>
                                                         </constraints>
@@ -307,6 +316,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="See All"/>
+                                                        <connections>
+                                                            <action selector="seeIngredientsTap:" destination="oIV-m1-PUZ" eventType="touchUpInside" id="Hkm-l5-BG8"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -323,6 +335,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -345,10 +358,35 @@
                             <constraint firstItem="HJi-0h-rIb" firstAttribute="trailing" secondItem="vMT-Dq-MuS" secondAttribute="trailing" id="gQp-sU-hhe"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5IF-Gt-Q9w"/>
+                    <connections>
+                        <outlet property="allMealsCollectionView" destination="foU-Qf-gW8" id="ase-MQ-4xP"/>
+                        <outlet property="areaCollectionView" destination="DTe-Gf-mqa" id="gbg-RM-Rzt"/>
+                        <outlet property="categoriesCollectionView" destination="4XL-Yn-XKQ" id="COd-Uc-szA"/>
+                        <outlet property="ingredientsCollectionView" destination="fOI-el-5hG" id="STg-PQ-4bW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTa-mp-hNw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="988.54961832061065" y="-551.4084507042254"/>
+            <point key="canvasLocation" x="2165.6488549618321" y="-280.28169014084506"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oXg-Xe-hdP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y5y-Ra-Sdv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j22-7x-Rhv">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oIV-m1-PUZ" kind="relationship" relationship="rootViewController" id="eQx-ZC-Yf8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XrR-Au-xTd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1238.9312977099237" y="-280.28169014084506"/>
         </scene>
     </scenes>
     <resources>

@@ -11,13 +11,15 @@ class TabBar: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        view.backgroundColor = .white
+        setupTabBar()
     }
     
     func setupTabBar() {
         viewControllers = [
-            createNavController(for: LoginViewController(), title: NSLocalizedString("Home", comment: ""), image: UIImage(systemName: "magnifyingglass")!),
-            createNavController(for: LoginViewController(), title: NSLocalizedString("Discover", comment: ""), image: UIImage(systemName: "house")!),
+            createNavController(for: HomeViewController(), title: NSLocalizedString("Home", comment: ""), image: UIImage(systemName: "person")!),
+            createNavController(for: LoginViewController(), title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "person")!)
         ]
     }
     
