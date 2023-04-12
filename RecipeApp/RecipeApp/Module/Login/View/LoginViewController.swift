@@ -8,6 +8,8 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    static let identifier = "LoginViewController"
 
     
     @IBOutlet weak var emailTextField: UITextField!

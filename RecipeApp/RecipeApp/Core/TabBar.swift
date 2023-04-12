@@ -2,7 +2,7 @@
 //  TabBar.swift
 //  RecipeApp
 //
-//  Created by Iqlima Rahmawatin 10/04/23.
+//  Created by Muhammad Syabran on 10/04/23.
 //
 
 import UIKit
@@ -18,11 +18,11 @@ class TabBar: UITabBarController {
     
     func setupTabBar() {
         let homeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: HomeViewController.identifier)
-           
+        
         viewControllers = [
-                createNavController(for: HomeViewController(), title: NSLocalizedString("Home", comment: ""), image: UIImage(systemName: "person")!),
-                createNavController(for: LoginViewController(), title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "person")!)
-            ]
+            createNavController(for: homeViewController, title: NSLocalizedString("Home", comment: ""), image: UIImage(systemName: "person")!),
+            createNavController(for: LoginViewController(), title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "person")!)
+        ]
     }
     
     fileprivate func createNavController(for rootViewController: UIViewController,
