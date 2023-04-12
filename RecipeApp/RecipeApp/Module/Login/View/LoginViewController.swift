@@ -22,8 +22,5 @@ class LoginViewController: UIViewController {
 
 }
 
-//membuat home
-// 1. scroll view
-// 2. stactView
-// 3.
+
 

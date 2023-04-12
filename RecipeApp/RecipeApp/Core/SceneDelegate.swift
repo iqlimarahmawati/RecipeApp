@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  RecipeApp
 //
-//  Created by Phincon on 10/04/23.
+//  Created by Iqlima Rahmawati on 10/04/23.
 //
 
 import UIKit
@@ -10,7 +10,6 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }

@@ -78,10 +78,10 @@
 		36CE2B4729E3C25600FB79BF /* RecipeApp */ = {
 			isa = PBXGroup;
 			children = (
-				91C7060A29E436EA0012B19E /* Networking */,
+				36DFB65629E643FF005FA04E /* Networking */,
 				91C7060E29E437390012B19E /* Core */,
 				919500DF29E449070080F3F8 /* Module */,
-				91C7060C29E4370E0012B19E /* ViewModel */,
+				36DFB65829E64508005FA04E /* ViewModel */,
 				91C7060F29E437430012B19E /* Storybooard */,
 				36CE2B5129E3C25700FB79BF /* Assets.xcassets */,
 				36CE2B5629E3C25700FB79BF /* Info.plist */,
@@ -89,12 +89,41 @@
 			path = RecipeApp;
 			sourceTree = "<group>";
 		};
+		36DFB65629E643FF005FA04E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		36DFB65729E644EC005FA04E /* Cell-Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Cell-Detail";
+			sourceTree = "<group>";
+		};
+		36DFB65829E64508005FA04E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		36DFB65929E64528005FA04E /* SigUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SigUp;
+			sourceTree = "<group>";
+		};
 		919500DF29E449070080F3F8 /* Module */ = {
 			isa = PBXGroup;
 			children = (
 				919500E129E4493F0080F3F8 /* Home */,
+				36DFB65729E644EC005FA04E /* Cell-Detail */,
+				36DFB65929E64528005FA04E /* SigUp */,
 				919500E029E449190080F3F8 /* Login */,
-				919500E229E4494B0080F3F8 /* SignUp */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -113,16 +142,8 @@
 				919500E329E449AB0080F3F8 /* View */,
 				91C7060B29E436FE0012B19E /* Model */,
 				91F3093D29E5AD2F00214C27 /* Cell-Home */,
-				91F3094229E5AE1300214C27 /* Cell-Detail */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		919500E229E4494B0080F3F8 /* SignUp */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SignUp;
 			sourceTree = "<group>";
 		};
 		919500E329E449AB0080F3F8 /* View */ = {
@@ -133,26 +154,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		91C7060A29E436EA0012B19E /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		91C7060B29E436FE0012B19E /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				91C7061029E4381A0012B19E /* MealsModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		91C7060C29E4370E0012B19E /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		91C7060D29E437290012B19E /* View */ = {
@@ -227,13 +234,6 @@
 				91F3095029E5AF3A00214C27 /* IngredientsCollectionViewCell.xib */,
 			);
 			path = Ingredients;
-			sourceTree = "<group>";
-		};
-		91F3094229E5AE1300214C27 /* Cell-Detail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Cell-Detail";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

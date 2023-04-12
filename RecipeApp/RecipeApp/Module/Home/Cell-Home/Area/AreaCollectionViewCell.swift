@@ -11,9 +11,11 @@ class AreaCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "AreaCollectionViewCell"
     
+    @IBOutlet weak var areaImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
 }

@@ -10,9 +10,9 @@ import UIKit
 class CategoriesCollectionViewCell: UICollectionViewCell {
  
     static let identifier = "CategoriesCollectionViewCell"
-    
-    @IBOutlet weak var labelSementara: UILabel!
-    
+
+    @IBOutlet weak var categoriesImage: UIImageView!
+    @IBOutlet weak var categoriesLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
