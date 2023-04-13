@@ -2,7 +2,7 @@
 //  PopularIngredientsCollectionViewCell.swift
 //  RecipeApp
 //
-//  Created by Muhammad Syabran on 12/04/23.
+//  Created by Phincon on 13/04/23.
 //
 
 import UIKit
@@ -10,9 +10,14 @@ import UIKit
 class PopularIngredientsCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "PopularIngredientsCollectionViewCell"
+   
+    @IBOutlet weak var popularIngredientsImage: UIImageView!
+    @IBOutlet weak var namePopularIngredients: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        popularIngredientsImage.backgroundColor = .white
     }
 
 }

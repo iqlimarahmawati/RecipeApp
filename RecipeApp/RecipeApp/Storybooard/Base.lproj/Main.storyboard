@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oIV-m1-PUZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oIV-m1-PUZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -101,7 +101,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJi-0h-rIb">
-                                <rect key="frame" x="0.0" y="48" width="414" height="848"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BFm-AS-bcY">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1254"/>
@@ -139,7 +139,7 @@
                                                         </cells>
                                                     </collectionView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkn-dI-CYb">
-                                                        <rect key="frame" x="321.5" y="16" width="76.5" height="34"/>
+                                                        <rect key="frame" x="329.5" y="16" width="68.5" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="pbe-kB-7Gr"/>
                                                         </constraints>
@@ -196,7 +196,7 @@
                                                         </cells>
                                                     </collectionView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKt-Fm-IN7">
-                                                        <rect key="frame" x="321.5" y="16" width="76.5" height="34"/>
+                                                        <rect key="frame" x="329.5" y="16" width="68.5" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="uLW-Hd-B5T"/>
                                                         </constraints>
@@ -220,11 +220,11 @@
                                                 <rect key="frame" x="0.0" y="654" width="414" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Populer Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spU-cg-zbC">
-                                                        <rect key="frame" x="16" y="16" width="148" height="34"/>
+                                                        <rect key="frame" x="16" y="16" width="156" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="etp-64-i52"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -249,7 +249,7 @@
                                                         </cells>
                                                     </collectionView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vL3-a2-JkB">
-                                                        <rect key="frame" x="321.5" y="16" width="76.5" height="34"/>
+                                                        <rect key="frame" x="329.5" y="16" width="68.5" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="vkS-e2-3q6"/>
                                                         </constraints>
@@ -274,11 +274,11 @@
                                                 <rect key="frame" x="0.0" y="854" width="414" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Meals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHB-gZ-CMl">
-                                                        <rect key="frame" x="16" y="16" width="112.5" height="34"/>
+                                                        <rect key="frame" x="16" y="16" width="117" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="Cca-Tp-KkF"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -303,7 +303,7 @@
                                                         </cells>
                                                     </collectionView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbq-PZ-3Gf">
-                                                        <rect key="frame" x="321.5" y="16" width="76.5" height="34"/>
+                                                        <rect key="frame" x="329.5" y="16" width="68.5" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="1wP-dy-qJv"/>
                                                         </constraints>
@@ -328,11 +328,11 @@
                                                 <rect key="frame" x="0.0" y="1054" width="414" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1P-3j-Mif">
-                                                        <rect key="frame" x="16" y="16" width="61" height="34"/>
+                                                        <rect key="frame" x="16" y="16" width="64.5" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="N3O-Ih-C20"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -357,7 +357,7 @@
                                                         </cells>
                                                     </collectionView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ln0-iy-m6e">
-                                                        <rect key="frame" x="321.5" y="16" width="76.5" height="34"/>
+                                                        <rect key="frame" x="329.5" y="16" width="68.5" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="1ab-n4-da0"/>
                                                         </constraints>

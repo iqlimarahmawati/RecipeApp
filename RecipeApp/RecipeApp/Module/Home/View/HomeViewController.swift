@@ -23,7 +23,6 @@ class HomeViewController: UIViewController {
     var randomMealsData: [MealsModel] = []
     var countryData: [MealsModel] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,7 +45,7 @@ class HomeViewController: UIViewController {
         
         // MARK: setUp AllMeals
         let allMealsLayout = UICollectionViewFlowLayout()
-        allMealsLayout.scrollDirection = .vertical
+        allMealsLayout.scrollDirection = .horizontal
         allMealsLayout.sectionInset = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
         allMealsLayout.itemSize = CGSize(width: 150, height: 180)
         
@@ -60,8 +59,8 @@ class HomeViewController: UIViewController {
         //MARK: setUp Popular Ingredients
         let popularIngredientsLayout = UICollectionViewFlowLayout()
         popularIngredientsLayout.scrollDirection = .horizontal
-        popularIngredientsLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        popularIngredientsLayout.itemSize = CGSize(width: 150, height: 180)
+        popularIngredientsLayout.sectionInset = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+        popularIngredientsLayout.itemSize = CGSize(width: 147, height: 153)
         
         popularIngredientsCollectionView.collectionViewLayout = popularIngredientsLayout
         popularIngredientsCollectionView.delegate = self
@@ -72,8 +71,8 @@ class HomeViewController: UIViewController {
         //MARK: Random Meals
         let randomMealsLayout = UICollectionViewFlowLayout()
         randomMealsLayout.scrollDirection = .horizontal
-        randomMealsLayout.sectionInset = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
-        randomMealsLayout.itemSize = CGSize(width: 150, height: 180)
+        randomMealsLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        randomMealsLayout.itemSize = CGSize(width: 231, height: 120)
         
         randomMealsCollectionView.collectionViewLayout = randomMealsLayout
         randomMealsCollectionView.delegate = self
@@ -83,9 +82,9 @@ class HomeViewController: UIViewController {
         
         //MARK: setUp Country
         let countryLayout = UICollectionViewFlowLayout()
-        countryLayout.scrollDirection = .horizontal
-        countryLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        countryLayout.itemSize = CGSize(width: 150, height: 180)
+        countryLayout.scrollDirection = .vertical
+        countryLayout.sectionInset = UIEdgeInsets(top: 4, left: 8, bottom: 8, right: 8)
+        countryLayout.itemSize = CGSize(width: 90, height: 90)
         
         countryCollectionView.collectionViewLayout = countryLayout
         countryCollectionView.delegate = self
@@ -102,37 +101,38 @@ class HomeViewController: UIViewController {
         categoriesData.append(MealsModel(strMealThumb:"burger1",strMeal:"Hamburger"))
         categoriesData.append(MealsModel(strMealThumb:"pizza",strMeal: "Pizza"))
         categoriesData.append(MealsModel(strMealThumb:"fruitsalad",strMeal:"Salad"))
+        categoriesData.append(MealsModel(strMealThumb:"Frenchfries", strMeal: "French fries"))
         categoriesCollectionView.reloadData()
         
         // all meals
         allMealsData.append(MealsModel(strMealThumb: "chicken", idMeal: "1", strMeal: "Fried Chicken", strCategory: "Chicken", strArea: "Batam"))
         allMealsData.append(MealsModel(strMealThumb:"donut", idMeal: "2", strMeal: "Donut", strCategory: "Sweets",strArea: "Jakarta" ))
         allMealsData.append(MealsModel(strMealThumb:"pizza", idMeal:"4",strMeal: "Pizza Margerita", strCategory: "pizza", strArea: "Amerika"))
+        allMealsData.append(MealsModel(strMealThumb:"pizza", idMeal:"4",strMeal: "Pizza Margerita", strCategory: "pizza", strArea: "Amerika"))
         allMealsCollectionView.reloadData()
+        
        
         // popular ingredients
-        populerIngredientsData.append(MealsModel(strMealThumb:"", strMeal:""))
-        populerIngredientsData.append(MealsModel(strMealThumb:"", strMeal:""))
-        populerIngredientsData.append(MealsModel(strMealThumb:"", strMeal:""))
-        populerIngredientsData.append(MealsModel(strMealThumb:"", strMeal:""))
+        populerIngredientsData.append(MealsModel(strMealThumb:"beef", strMeal:"Beef"))
+        populerIngredientsData.append(MealsModel(strMealThumb:"chicken-1", strMeal:"Chicken "))
+        populerIngredientsData.append(MealsModel(strMealThumb:"salmon", strMeal:"Salmon"))
+        populerIngredientsData.append(MealsModel(strMealThumb:"shrimp", strMeal:"Shrimp"))
         popularIngredientsCollectionView.reloadData()
         
         // random meals
-        randomMealsData.append(MealsModel(strMealThumb:"", strMeal:""))
-        randomMealsData.append(MealsModel(strMealThumb:"", strMeal:""))
-        randomMealsData.append(MealsModel(strMealThumb:"", strMeal:""))
-        randomMealsData.append(MealsModel(strMealThumb:"", strMeal:""))
+        randomMealsData.append(MealsModel(strMealThumb:"chicken", strMeal:"chicken"))
+        randomMealsData.append(MealsModel(strMealThumb:"chicken", strMeal:"chicken"))
+        randomMealsData.append(MealsModel(strMealThumb:"chicken", strMeal:"chicken"))
+        randomMealsData.append(MealsModel(strMealThumb:"chicken", strMeal:"chicken"))
         randomMealsCollectionView.reloadData()
         
-        
+
         // country
-        countryData.append(MealsModel(strMealThumb:""))
-        countryData.append(MealsModel(strMealThumb:""))
-        countryData.append(MealsModel(strMealThumb:""))
-        countryData.append(MealsModel(strMealThumb:""))
+        countryData.append(MealsModel(strMealThumb:"indonesia"))
+        countryData.append(MealsModel(strMealThumb:"japan"))
+        countryData.append(MealsModel(strMealThumb:"usa"))
+        countryData.append(MealsModel(strMealThumb:"india"))
         countryCollectionView.reloadData()
-        
-        
         
     }
 
@@ -159,8 +159,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
         case allMealsCollectionView:
             return allMealsData.count
-
-        // TODO: Tambah case nya
+            
+        case popularIngredientsCollectionView:
+            return populerIngredientsData.count
+            
+        case randomMealsCollectionView:
+            return randomMealsData.count
+        
+        case countryCollectionView:
+            return countryData.count
 
         default:
             return 1
@@ -191,7 +198,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             guard let cell =  popularIngredientsCollectionView.dequeueReusableCell(withReuseIdentifier: PopularIngredientsCollectionViewCell.identifier, for: indexPath) as? PopularIngredientsCollectionViewCell else {
                  return UICollectionViewCell()
             }
-            
+            cell.popularIngredientsImage.image = (UIImage(named: populerIngredientsData[indexPath.row].strMealThumb ?? ""))
+            cell.namePopularIngredients.text = populerIngredientsData[indexPath.row].strMeal
             return cell
             
         case randomMealsCollectionView:
@@ -199,6 +207,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                  return UICollectionViewCell()
             }
             
+            cell.randomMealsImage.image = UIImage(named: randomMealsData[indexPath.row].strMealThumb ?? "")
+            cell.nameRandomMeals.text = randomMealsData[indexPath.row].strMeal
+            cell.categoriesRandomMeals.text = randomMealsData[indexPath.row].strCategory
             return cell
             
         case countryCollectionView:
@@ -206,8 +217,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                  return UICollectionViewCell()
             }
 
-            cell.backgroundColor = .cyan
-
+            cell.countryImage.image = UIImage(named: countryData[indexPath.row].strMealThumb ?? "")
             return cell
 
 

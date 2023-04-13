@@ -17,8 +17,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
+    
         cellView.layer.cornerRadius = 10
         categoriesImage.contentMode = .scaleAspectFit
     }
