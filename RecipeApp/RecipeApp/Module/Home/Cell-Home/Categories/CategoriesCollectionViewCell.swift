@@ -10,7 +10,8 @@ import UIKit
 class CategoriesCollectionViewCell: UICollectionViewCell {
  
     static let identifier = "CategoriesCollectionViewCell"
-
+ 
+    @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var categoriesImage: UIImageView!
     @IBOutlet weak var categoriesLabel: UILabel!
     
@@ -18,7 +19,8 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        contentView.backgroundColor = .blue
+        cellView.layer.cornerRadius = 10
+        categoriesImage.contentMode = .scaleAspectFit
     }
 
 }
