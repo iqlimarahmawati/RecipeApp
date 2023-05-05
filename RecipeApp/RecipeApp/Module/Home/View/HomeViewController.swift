@@ -14,20 +14,39 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var allMealsCollectionView: UICollectionView!
     @IBOutlet weak var popularIngredientsCollectionView: UICollectionView!
-    @IBOutlet weak var randomMealsCollectionView: UICollectionView!
     @IBOutlet weak var countryCollectionView: UICollectionView!
     
+    // MARK:  Dummy Data
     var categoriesData: [MealsModel] = []
     var allMealsData: [MealsModel] = []
     var populerIngredientsData: [MealsModel] = []
     var randomMealsData: [MealsModel] = []
     var countryData: [MealsModel] = []
-    
+//
     override func viewDidLoad() {
         super.viewDidLoad()
 
         addData()
+        getData()
         setupCollectionView()
+    }
+    
+    private func getData() {
+        let categoriesViewModel = categoriesMealsViewModel(urlString: "https://www.themealdb.com/api/json/v1/1/list.php?c=lis", apiService: GetMealsApi())
+        categoriesViewModel.fetchDataCategories()
+        categoriesViewModel.bindCategoriesMealsData = { categoriesMealsDataModel in
+            print("this is the data: \(String(describing: categoriesMealsDataModel))")
+            if let categoriesMealsData = categoriesMealsDataModel {
+                for category in categoriesMealsData.meals {
+                    self.categoriesData.append(category)
+                }
+                DispatchQueue.main.async {
+                    self.categoriesCollectionView.reloadData()
+                }
+            }
+        }
+        
+        //
     }
     
     func setupCollectionView() {
@@ -42,90 +61,70 @@ class HomeViewController: UIViewController {
         categoriesCollectionView.delegate = self
         categoriesCollectionView.dataSource = self
         categoriesCollectionView.register(UINib(nibName: "CategoriesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CategoriesCollectionViewCell.identifier)
-        
+
         // MARK: setUp AllMeals
         let allMealsLayout = UICollectionViewFlowLayout()
         allMealsLayout.scrollDirection = .horizontal
         allMealsLayout.sectionInset = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
         allMealsLayout.itemSize = CGSize(width: 150, height: 180)
-        
-        allMealsCollectionView.isScrollEnabled = false
+
+//        allMealsCollectionView.isScrollEbled = false
         allMealsCollectionView.collectionViewLayout = allMealsLayout
         allMealsCollectionView.delegate = self
         allMealsCollectionView.dataSource = self
         allMealsCollectionView.register(UINib(nibName: "AllMealsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: AllMealsCollectionViewCell.identifier)
-        
-        
+
+
         //MARK: setUp Popular Ingredients
         let popularIngredientsLayout = UICollectionViewFlowLayout()
         popularIngredientsLayout.scrollDirection = .horizontal
         popularIngredientsLayout.sectionInset = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
         popularIngredientsLayout.itemSize = CGSize(width: 147, height: 153)
-        
+
         popularIngredientsCollectionView.collectionViewLayout = popularIngredientsLayout
         popularIngredientsCollectionView.delegate = self
         popularIngredientsCollectionView.dataSource = self
         popularIngredientsCollectionView.register(UINib(nibName: "PopularIngredientsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: PopularIngredientsCollectionViewCell.identifier)
-        
-        
-        //MARK: Random Meals
-        let randomMealsLayout = UICollectionViewFlowLayout()
-        randomMealsLayout.scrollDirection = .horizontal
-        randomMealsLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        randomMealsLayout.itemSize = CGSize(width: 231, height: 120)
-        
-        randomMealsCollectionView.collectionViewLayout = randomMealsLayout
-        randomMealsCollectionView.delegate = self
-        randomMealsCollectionView.dataSource = self
-        randomMealsCollectionView.register(UINib(nibName: "RandomMealsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: RandomMealsCollectionViewCell.identifier)
-        
-        
+
+
         //MARK: setUp Country
         let countryLayout = UICollectionViewFlowLayout()
         countryLayout.scrollDirection = .vertical
         countryLayout.sectionInset = UIEdgeInsets(top: 4, left: 8, bottom: 8, right: 8)
         countryLayout.itemSize = CGSize(width: 90, height: 90)
-        
+
         countryCollectionView.collectionViewLayout = countryLayout
         countryCollectionView.delegate = self
         countryCollectionView.dataSource = self
         countryCollectionView.register(UINib(nibName: "CountryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CountryCollectionViewCell.identifier)
-        
+
     }
     
     func addData() {
         // TODO: HAPUS KALO UDAH ADA API
         // categories
-        categoriesData.append(MealsModel(strMealThumb:"shushi", strMeal: "Shushi"))
-        categoriesData.append(MealsModel(strMealThumb:"chicken",strMeal:"Fried Chicken"))
-        categoriesData.append(MealsModel(strMealThumb:"burger1",strMeal:"Hamburger"))
-        categoriesData.append(MealsModel(strMealThumb:"pizza",strMeal: "Pizza"))
-        categoriesData.append(MealsModel(strMealThumb:"fruitsalad",strMeal:"Salad"))
-        categoriesData.append(MealsModel(strMealThumb:"Frenchfries", strMeal: "French fries"))
-        categoriesCollectionView.reloadData()
-        
+//        categoriesData.append(MealsModel(strMealThumb:"shushi", strCategory: "Sushi"))
+//        categoriesData.append(MealsModel(strMealThumb:"chicken", strCategory: "Fried Chicken"))
+//        categoriesData.append(MealsModel(strMealThumb:"burger1", strCategory: "Hamburger"))
+//        categoriesData.append(MealsModel(strMealThumb:"pizza", strCategory: "Pizza"))
+//        categoriesData.append(MealsModel(strMealThumb:"fruitsalad", strCategory: "Salad"))
+//        categoriesData.append(MealsModel(strMealThumb:"Frenchfries", strCategory: "French fries"))
+//        categoriesCollectionView.reloadData()
+
         // all meals
         allMealsData.append(MealsModel(strMealThumb: "chicken", idMeal: "1", strMeal: "Fried Chicken", strCategory: "Chicken", strArea: "Batam"))
-        allMealsData.append(MealsModel(strMealThumb:"donut", idMeal: "2", strMeal: "Donut", strCategory: "Sweets",strArea: "Jakarta" ))
+        allMealsData.append(MealsModel(strMealThumb:"Donut", idMeal: "2", strMeal: "Donut", strCategory: "Sweets",strArea: "Jakarta" ))
         allMealsData.append(MealsModel(strMealThumb:"pizza", idMeal:"4",strMeal: "Pizza Margerita", strCategory: "pizza", strArea: "Amerika"))
         allMealsData.append(MealsModel(strMealThumb:"pizza", idMeal:"4",strMeal: "Pizza Margerita", strCategory: "pizza", strArea: "Amerika"))
         allMealsCollectionView.reloadData()
-        
-       
+
+
         // popular ingredients
-        populerIngredientsData.append(MealsModel(strMealThumb:"beef", strMeal:"Beef"))
-        populerIngredientsData.append(MealsModel(strMealThumb:"chicken-1", strMeal:"Chicken "))
-        populerIngredientsData.append(MealsModel(strMealThumb:"salmon", strMeal:"Salmon"))
-        populerIngredientsData.append(MealsModel(strMealThumb:"shrimp", strMeal:"Shrimp"))
+        populerIngredientsData.append(MealsModel(strMealThumb:"beef", strIngredient1: "Beef"))
+        populerIngredientsData.append(MealsModel(strMealThumb:"chicken-1", strIngredient1:"Chicken "))
+        populerIngredientsData.append(MealsModel(strMealThumb:"salmon", strIngredient1:"Salmon"))
+        populerIngredientsData.append(MealsModel(strMealThumb:"shrimp", strIngredient1:"Shrimp"))
         popularIngredientsCollectionView.reloadData()
-        
-        // random meals
-        randomMealsData.append(MealsModel(strMealThumb:"chicken", strMeal:"chicken"))
-        randomMealsData.append(MealsModel(strMealThumb:"chicken", strMeal:"chicken"))
-        randomMealsData.append(MealsModel(strMealThumb:"chicken", strMeal:"chicken"))
-        randomMealsData.append(MealsModel(strMealThumb:"chicken", strMeal:"chicken"))
-        randomMealsCollectionView.reloadData()
-        
 
         // country
         countryData.append(MealsModel(strMealThumb:"indonesia"))
@@ -133,21 +132,31 @@ class HomeViewController: UIViewController {
         countryData.append(MealsModel(strMealThumb:"usa"))
         countryData.append(MealsModel(strMealThumb:"india"))
         countryCollectionView.reloadData()
-        
     }
 
     @IBAction func seeAllCategoriesTap(_ sender: Any) {
+        let viewController = SeeAllCategoriesViewController()
+        viewController.categorieslistData = self.categoriesData
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    @IBAction func seeAllMealsTap(_ sender: Any) {
+        let viewController =  SeeAllMealsViewController()
+        viewController.allMealsDatas = self.allMealsData
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    @IBAction func seeAllMealsTap(_ sender: Any) {
+    @IBAction func seeAllPopularIngredientsTap(_ sender: Any) {
+        let viewController = SeeAllPopularIngredientsViewController()
+        viewController.populerIngredientsListData = self.populerIngredientsData
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction func seeAreaTap(_ sender: Any) {
+        let viewController = SeeAllCountryViewController()
+        viewController.countryListData = self.countryData
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
-    
-    @IBAction func seeIngredientsTap(_ sender: Any) {
-    }
-    
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -162,9 +171,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
         case popularIngredientsCollectionView:
             return populerIngredientsData.count
-            
-        case randomMealsCollectionView:
-            return randomMealsData.count
         
         case countryCollectionView:
             return countryData.count
@@ -180,7 +186,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             guard let cell =  categoriesCollectionView.dequeueReusableCell(withReuseIdentifier: CategoriesCollectionViewCell.identifier, for: indexPath) as? CategoriesCollectionViewCell else {
                  return UICollectionViewCell()
             }
-            cell.categoriesLabel.text = categoriesData[indexPath.row].strMeal
+            cell.categoriesLabel.text = categoriesData[indexPath.row].strCategory
             cell.categoriesImage.image = (UIImage(named: categoriesData[indexPath.row].strMealThumb ?? ""))
             return cell
 
@@ -199,18 +205,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                  return UICollectionViewCell()
             }
             cell.popularIngredientsImage.image = (UIImage(named: populerIngredientsData[indexPath.row].strMealThumb ?? ""))
-            cell.namePopularIngredients.text = populerIngredientsData[indexPath.row].strMeal
+            cell.namePopularIngredients.text = populerIngredientsData[indexPath.row].strIngredient1
+            
             return cell
             
-        case randomMealsCollectionView:
-            guard let cell =  randomMealsCollectionView.dequeueReusableCell(withReuseIdentifier: RandomMealsCollectionViewCell.identifier, for: indexPath) as? RandomMealsCollectionViewCell else {
-                 return UICollectionViewCell()
-            }
-            
-            cell.randomMealsImage.image = UIImage(named: randomMealsData[indexPath.row].strMealThumb ?? "")
-            cell.nameRandomMeals.text = randomMealsData[indexPath.row].strMeal
-            cell.categoriesRandomMeals.text = randomMealsData[indexPath.row].strCategory
-            return cell
             
         case countryCollectionView:
             guard let cell =  countryCollectionView.dequeueReusableCell(withReuseIdentifier: CountryCollectionViewCell.identifier, for: indexPath) as? CountryCollectionViewCell else {

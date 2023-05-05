@@ -7,7 +7,7 @@
 
 import Foundation
 struct RecipeModel: Codable {
-    var Meals : MealsModel
+    var meals : [MealsModel]
 }
 
 struct MealsModel: Codable {

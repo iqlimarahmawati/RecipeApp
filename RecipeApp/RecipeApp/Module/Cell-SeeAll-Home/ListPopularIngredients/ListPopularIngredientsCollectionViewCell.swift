@@ -2,7 +2,7 @@
 //  ListPopularIngredientsCollectionViewCell.swift
 //  RecipeApp
 //
-//  Created by Phincon on 13/04/23.
+//  Created by Iqlima Rahmawati on 13/04/23.
 //
 
 import UIKit
@@ -13,7 +13,8 @@ class ListPopularIngredientsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var popularIngredientsImage: UIImageView!
     @IBOutlet weak var namePopularIngredientsLabel: UILabel!
-    
+    @IBOutlet weak var cellListPopularView: UIView!
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
