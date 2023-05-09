@@ -14,10 +14,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
-        let home = TabBar()
-        self.window?.rootViewController = home
-        window?.makeKeyAndVisible()
-        window?.windowScene = windowScene
+        
+        let userId = UserDefaults.standard.value(forKey: "user_id")
+        let userEmail = UserDefaults.standard.value(forKey: "user_email")
+        
+        if userId == nil && userEmail == nil {
+            let login = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
+            self.window?.rootViewController = login
+            self.window?.makeKeyAndVisible()
+            self.window?.windowScene = windowScene
+            
+        } else {
+            let home = TabBar()
+            self.window?.rootViewController = home
+            self.window?.makeKeyAndVisible()
+            self.window?.windowScene = windowScene
+        }        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
