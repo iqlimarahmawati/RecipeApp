@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CountryCollectionViewCell" customModule="RecipeApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="146" height="99"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="146" height="99"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z8F-nc-erH">
+                        <rect key="frame" x="0.0" y="0.0" width="146" height="99"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqG-9b-3iF">
+                                <rect key="frame" x="52.5" y="40" width="41.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bqG-9b-3iF" firstAttribute="centerX" secondItem="Z8F-nc-erH" secondAttribute="centerX" id="7vU-8z-5Qg"/>
+                            <constraint firstItem="bqG-9b-3iF" firstAttribute="centerY" secondItem="Z8F-nc-erH" secondAttribute="centerY" id="W4z-bG-8En"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Z8F-nc-erH" secondAttribute="bottom" id="Itn-Fs-RgY"/>
+                <constraint firstItem="Z8F-nc-erH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="LPy-le-E4a"/>
+                <constraint firstAttribute="trailing" secondItem="Z8F-nc-erH" secondAttribute="trailing" id="jc8-ym-RfP"/>
+                <constraint firstItem="Z8F-nc-erH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xjc-O3-iFp"/>
+            </constraints>
+            <size key="customSize" width="146" height="99"/>
+            <connections>
+                <outlet property="countryLabel" destination="bqG-9b-3iF" id="eGy-bH-PnG"/>
+                <outlet property="countryView" destination="Z8F-nc-erH" id="LfB-EK-1ml"/>
+            </connections>
+            <point key="canvasLocation" x="200.00000000000003" y="36.495535714285715"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
