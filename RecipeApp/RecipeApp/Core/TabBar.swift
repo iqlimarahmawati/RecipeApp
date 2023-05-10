@@ -15,7 +15,7 @@ class TabBar: UITabBarController {
         view.backgroundColor = .white
         setupTabBar()
     }
-    
+    //MARK: TAB BAR HOME DAN PROFILE
     func setupTabBar() {
         let homeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: HomeViewController.identifier)
         let profileViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ProfileViewController.identifier)
@@ -26,6 +26,7 @@ class TabBar: UITabBarController {
         ]
     }
     
+    //MARK: NAV BAR
     fileprivate func createNavController(for rootViewController: UIViewController,
                                          title: String,
                                          image: UIImage) -> UIViewController {

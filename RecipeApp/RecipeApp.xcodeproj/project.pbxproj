@@ -54,6 +54,7 @@
 		91BBF4652A07F45200008D24 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 91BBF4642A07F45200008D24 /* FirebaseStorage */; };
 		91BBF4672A0800B600008D24 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BBF4662A0800B600008D24 /* RegisterViewController.swift */; };
 		91BBF46F2A09236E00008D24 /* DetailMealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BBF46E2A09236E00008D24 /* DetailMealsViewModel.swift */; };
+		91BBF4722A0A48F600008D24 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BBF4712A0A48F600008D24 /* UIViewController+Extension.swift */; };
 		91C7061129E4381A0012B19E /* MealsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C7061029E4381A0012B19E /* MealsModel.swift */; };
 		91D1DD0A2A01FD850068F16D /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DD092A01FD850068F16D /* ApiService.swift */; };
 		91E177A62A04FEA800D42830 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E177A52A04FEA800D42830 /* ProfileModel.swift */; };
@@ -102,6 +103,7 @@
 		91BBF4512A07F22000008D24 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		91BBF4662A0800B600008D24 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		91BBF46E2A09236E00008D24 /* DetailMealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMealsViewModel.swift; sourceTree = "<group>"; };
+		91BBF4712A0A48F600008D24 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		91C7061029E4381A0012B19E /* MealsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsModel.swift; sourceTree = "<group>"; };
 		91D1DD092A01FD850068F16D /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		91E177A52A04FEA800D42830 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		36CE2B4729E3C25600FB79BF /* RecipeApp */ = {
 			isa = PBXGroup;
 			children = (
+				91BBF4702A0A48A400008D24 /* Extension */,
 				91D1DD072A01F5BA0068F16D /* Networking */,
 				91E177A32A04F5CA00D42830 /* Model */,
 				91C7060E29E437390012B19E /* Core */,
@@ -357,6 +360,14 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		91BBF4702A0A48A400008D24 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				91BBF4712A0A48F600008D24 /* UIViewController+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		91C7060D29E437290012B19E /* View */ = {
@@ -537,6 +548,7 @@
 				91BBF43E2A07B12000008D24 /* ProfileViewController.swift in Sources */,
 				3621D7B329E7D10F00CBADE0 /* ListCountryCollectionViewCell.swift in Sources */,
 				91F3093C29E5A94400214C27 /* HomeViewController.swift in Sources */,
+				91BBF4722A0A48F600008D24 /* UIViewController+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 ////
 import Foundation
 
+//MARK: PROTOCOL UNTUK CATEGORIES VIEW MODEL
 protocol categoriesMealsViewModelProtocol {
     var urlString : String {get}
     var bindCategoriesMealsData : ((RecipeModel?)->())? {get set}

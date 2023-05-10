@@ -40,13 +40,12 @@ class HomeViewController: UIViewController {
     }
  
     func navbarSetup() {
-//        self.title = "Recipe"
-//        self.navigationItem.largeTitleDisplayMode = .always
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "arrow.clockwise"), style: .plain, target: self, action: #selector(refreshClicked)
         )
     }
     
+    //MARK: CUSTOM BUTTON SEE ALL
     func customButton() {
         seeAllButtonAllMeals.layer.borderColor = UIColor.orange.cgColor
         seeAllButtonAllMeals.layer.borderWidth = 1
@@ -73,7 +72,7 @@ class HomeViewController: UIViewController {
         self.getData()
     }
     
-    //get API
+    //MARK: Get API
     private func getData() {
         let categoriesViewModel = categoriesMealsViewModel(urlString: "https://www.themealdb.com/api/json/v2/1/list.php?c=lis", apiService: GetMealsApi())
         categoriesViewModel.fetchDataCategories()
@@ -217,7 +216,7 @@ class HomeViewController: UIViewController {
         countryCollectionView.reloadData()
     }
     
-    //MARK: SEE ALL KLIK
+    //MARK: BUAT NGEKLIK SEE ALL - HOME
     @IBAction func seeAllMealsTap(_ sender: Any) {
         let viewController = SeeAllMealsViewController()
         viewController.allMealsDatas = self.allMealsData
@@ -305,12 +304,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
     
-    
+    //MARK: PILIH ATAU NGEKLIK YANG AWAL DI LIST AWAL
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // pilih cell
+        //MARK: PILIH / KLIK
         switch collectionView {
         case categoriesCollectionView:
-            self.filterMealsData = [] // Untuk kosongkan data
+            self.filterMealsData = [] // Untuk kosongkan data supaya ga double
             let category = categoriesData[indexPath.row].strCategory
 //            print("CATEGORIES KLIK \(String(describing: category))")
             let categoriesViewModel = categoriesMealsViewModel(urlString: "https://www.themealdb.com/api/json/v1/1/filter.php?c=\(category ?? "")", apiService: GetMealsApi())
@@ -320,7 +319,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     for category in categoriesMealsDatas.meals {
                         self.filterMealsData.append(category)
                     }
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { // untuk masukan data secara sinkron// untuk antrian data
                         let viewController =  SeeAllMealsViewController()
                         viewController.title = category
                         viewController.allMealsDatas.insert(contentsOf: self.filterMealsData, at: 0)
@@ -338,7 +337,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case popularIngredientsCollectionView:
             self.filterMealsData = [] // Untuk kosongkan data
             let ingredient = populerIngredientsData[indexPath.row].strIngredient
-            print("POPULAR INGREDIENTS KLIK \(String(describing: ingredient))")
+//            print("POPULAR INGREDIENTS KLIK \(String(describing: ingredient))")
             let viewModel = popularIngredientsViewModel(urlString: "https://www.themealdb.com/api/json/v2/1/filter.php?i=\(ingredient ?? "")", apiService: GetMealsApi())
             viewModel.fetchDataPopular()
             viewModel.bindPopularIngredientsData = { popularIngredientsDataModel in
@@ -358,7 +357,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case countryCollectionView:
             self.filterMealsData = [] // Untuk kosongkan data
             let country = countryData[indexPath.row].strArea
-            print("COUNTRY KLIK \(String(describing: country))")
+//            print("COUNTRY KLIK \(String(describing: country))")
             let viewModel = countryViewModel(urlString: "https://www.themealdb.com/api/json/v1/1/filter.php?a=\(country ?? "")", apiService: GetMealsApi())
             viewModel.fetchDataCountry()
             viewModel.bindCountryData = { categoriesMealsDataModel in
@@ -380,10 +379,5 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
 }
-
-//membuat home page stroryBoard
-// 1. scroll view
-// 2. stactView
-// 3. collectionView
 
 

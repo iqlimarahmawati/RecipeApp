@@ -79,6 +79,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    //MARK: BUAT NGEKLIK LIST YANG ADA DI PROFILE TABLE CELL
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let edit = editModel[indexPath.row]
         if edit == "Name" {

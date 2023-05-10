@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let userId = UserDefaults.standard.value(forKey: "user_id")
         let userEmail = UserDefaults.standard.value(forKey: "user_email")
-        
+
         if userId == nil && userEmail == nil {
             let login = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
             self.window?.rootViewController = login

@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
 
 
     @IBAction func loginOnTap(_ sender: Any) {
-        let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) //jgn pake !
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
@@ -66,26 +66,9 @@ class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController {
-    public func showToast(message : String, font: UIFont, color: UIColor) {
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-200, width: 150, height: 50))
-        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-        toastLabel.textColor = color
-        toastLabel.font = font
-        toastLabel.textAlignment = .center
-        toastLabel.numberOfLines = 0
-        toastLabel.text = message
-        toastLabel.alpha = 1.0
-        toastLabel.layer.cornerRadius = 10
-        toastLabel.clipsToBounds  =  true
-        self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 8.0, delay: 0.1, options: .curveEaseOut, animations: {
-            toastLabel.alpha = 0.0
-        }, completion: { (isCompleted) in
-            toastLabel.removeFromSuperview()
-        })
-    }
-}
-
-
+//MARK: BUAT FIREBASE AUTENTICATIONS // YT : CodeWithChris
+// 1. REGISTER APP
+// 2. DOWNLOAD CONFIG FILE
+// 3. ADD FIREBASE SDK
+// 4. ADD INISIALISATION CODE DI APP DELEGET(CORE)
 
