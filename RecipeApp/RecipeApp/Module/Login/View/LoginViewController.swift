@@ -28,10 +28,10 @@ class LoginViewController: UIViewController {
 
 
     @IBAction func loginOnTap(_ sender: Any) {
-        let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) //jgn pake !
-        let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+        Auth.auth().signIn(withEmail: email, password: password ) { (result, error) in
             if error != nil {
                 self.showToast(message: "Login Failed, \(error?.localizedDescription ?? "")", font: .systemFont(ofSize: 12), color: .red)
                 
