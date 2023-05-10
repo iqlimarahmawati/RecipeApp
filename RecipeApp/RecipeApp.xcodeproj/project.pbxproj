@@ -274,7 +274,6 @@
 			isa = PBXGroup;
 			children = (
 				91BBF46D2A08FE6700008D24 /* View */,
-				91B5136A2A04DBF200D2074A /* DetailsMealsViewController.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -358,6 +357,7 @@
 		91BBF46D2A08FE6700008D24 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				91B5136A2A04DBF200D2074A /* DetailsMealsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
